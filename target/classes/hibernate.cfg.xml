@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+    <session-factory>
+        <property name="hibernate.dialect">org.hibernate.dialect.PostgreSQL82Dialect</property>
+        <property name="hibernate.connection.driver_class">org.postgresql.Driver</property>
+        <property name="hibernate.connection.username">postgres</property>
+        <property name="hibernate.connection.password">c0nd0ne9</property>
+        <property name="hibernate.connection.url">jdbc:postgresql://localhost:8888/fintech</property>
+
+        <property name="show_sql">true</property>
+        <property name="hibernate.hbm2ddl.auto">update</property>
+        <property name="hibernate.temp.use_jdbc_metadata_defaults">false</property>
+        <!--for caching -->
+        <!-- For batch processing-->
+        <property name="hibernate.jdbc.batch_size">50</property>
+        <!-- List of XML Files-->
+        <mapping resource="com/fintech/model/Stock.hbm.xml"/>
+        <mapping resource="com/fintech/model/StockDetail.hbm.xml"/>
+        <mapping resource="com/fintech/model/User.hbm.xml"/>
+
+    </session-factory>
+</hibernate-configuration>
